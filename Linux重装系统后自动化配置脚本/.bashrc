@@ -52,7 +52,17 @@ export HISTSIZE=0
 #ln -sf ~/.viminfo /dev/null
 #ln -sf ~/.mysql_history /dev/null
 
-
+#超时不操作自动注销
 export TMOUT=600
+
+#http 全局代理
+
+#支持curl，python requests库的代理设置
+export  all_proxy=http://192.15.100.159:8080
+
+#支持python requests库的代理设置，当然也可以在py脚本中先使用os.putenv设置环境变量，然后在调用requests
+export HTTPS_PROXY=https://192.15.100.159:8080
+export HTTP_PROXY=http://192.15.100.159:8080
+
 
 

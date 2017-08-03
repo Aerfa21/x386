@@ -4,3 +4,7 @@
 用python开发的一些Burpsuite 扩展插件
 
 unicode_to_chinese.py:               一个将unicode编码内容解码成汉字的BurpSuite的插件
+
+
+
+**注：** 网上搜索的解码unicode的插件不完整，不能全部都解码，我修改了下，解决了这个问题
