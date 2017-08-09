@@ -57,6 +57,7 @@ apt-get -y install maven
 apt-get -y install ruby
 apt-get -y install ruby-dev
 apt-get -y install redis-server 
+apt-get install -y build-essential  
 
 
 ###################################auto config ssh server 
@@ -65,8 +66,30 @@ echo "PermitRootLogin yes" > /etc/sshd/sshd_config
 
 ###################################auto install pip module
 
+# install pip2
+
+apt-get install python-setuptools
+
+easy_install pip
+
+apt-get install python-dev 
+
+# or
+
 #wget https://sec.ly.com/mirror/get-pip.py --no-check-certificate
 #python get-pip.py
+
+# install pip3
+
+#apt-get install python3-setuptools
+
+#easy_install3 pip
+
+#apt-get install python3-dev 
+
+
+# pip2
+
 pip install -U pip
 pip install ujson
 pip install requests
