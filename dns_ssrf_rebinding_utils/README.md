@@ -1,52 +1,52 @@
 [![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-GPLv2-red.svg)](https://github.com/ForrestX386/x386/blob/master/BurpSuite-Extensions/COPYING) [![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/huaihuaiStyleIT)
 
 
-²Î¿¼ Tr3jer ´óÅ£(https://github.com/Tr3jer/dnsAutoRebinding) µÄÊµÏÖ£¬×öÁËÒ»µãĞŞ¸Ä£¬ĞŞ¸´ÁËÒ»Ğ©Ğ¡BUG£¨type ºÍrecord_type»ìÓÃÎÊÌâ£¬»¹ÓĞÅäÖÃÎÄ¼ş¶ÁĞ´ÎÊÌâ£¬Ïê¼û´úÂë£¬ÎÒ¶¼×öÁË×¢ÊÍ£©
+å‚è€ƒ Tr3jer å¤§ç‰›(https://github.com/Tr3jer/dnsAutoRebinding) çš„å®ç°ï¼Œåšäº†ä¸€ç‚¹ä¿®æ”¹ï¼Œä¿®å¤äº†ä¸€äº›å°BUGï¼Œåšäº†å®é™…æµ‹è¯•ï¼ˆtype å’Œrecord_typeæ··ç”¨é—®é¢˜ï¼Œè¿˜æœ‰é…ç½®æ–‡ä»¶è¯»å†™é—®é¢˜ï¼Œè¯¦è§ä»£ç ï¼Œä»£ç ä¸­éƒ½åšäº†æ³¨é‡Šï¼‰
 
 <br />
-#### 0x00. ÔÚÕıÊ½»·¾³Ê¹ÓÃÕâ¸ö¹¤¾ßµÄÇ°Ìá
+#### 0x00. åœ¨æ­£å¼ç¯å¢ƒä½¿ç”¨è¿™ä¸ªå·¥å…·çš„å‰æ
 
-1) Ê×ÏÈÄãĞèÒªÒ»¸öDNS½âÎö·şÎñÆ÷£¨ÔÚÕâ¸öDNS·şÎñÆ÷ÉÏÔËĞĞ±¾³ÌĞò£©
+1) é¦–å…ˆä½ éœ€è¦ä¸€ä¸ªDNSè§£ææœåŠ¡å™¨ï¼ˆåœ¨è¿™ä¸ªDNSæœåŠ¡å™¨ä¸Šè¿è¡Œæœ¬ç¨‹åºï¼‰
 
-2£©Ê×ÏÈÄãĞèÒª×¢²áÒ»¸öÓòÃû£¬²¢ÔÚ×¢²áÉÌÄÇÀïÅäÖÃ½«NS¼ÇÂ¼Ö¸ÏòÄãµÄDNS·şÎñÆ÷
+2ï¼‰é¦–å…ˆä½ éœ€è¦æ³¨å†Œä¸€ä¸ªåŸŸåï¼Œå¹¶åœ¨æ³¨å†Œå•†é‚£é‡Œé…ç½®å°†NSè®°å½•æŒ‡å‘ä½ çš„DNSæœåŠ¡å™¨
 
-3) ĞŞ¸Älib/config.conf ÖĞµÄmaindomain ÎªÄã×¢²áµÄÓòÃû(±ğÍü¼Ç×îºóÃæµÄ.)
+3) ä¿®æ”¹lib/config.conf ä¸­çš„maindomain ä¸ºä½ æ³¨å†Œçš„åŸŸå(åˆ«å¿˜è®°æœ€åé¢çš„.)
 
 
 <br />
-#### 0x01 ±¾³ÌĞòµÄ¹¦ÄÜ
+####. 0x01 æœ¬ç¨‹åºçš„åŠŸèƒ½
 
-1£©dns rebinding
+1ï¼‰dns rebinding
 
-Èç¹û²»Àí½âÊ²Ã´ÊÇ dns rebinding£¬Çë²Î¿¼ [³¤Í¤¿Æ¼¼´óÅ£µÄÎÄÕÂ](https://ricterz.me/posts/Use%20DNS%20Rebinding%20to%20Bypass%20IP%20Restriction)
+å¦‚æœä¸ç†è§£ä»€ä¹ˆæ˜¯ dns rebindingï¼Œè¯·å‚è€ƒ [é•¿äº­ç§‘æŠ€å¤§ç‰›çš„æ–‡ç« ](https://ricterz.me/posts/Use%20DNS%20Rebinding%20to%20Bypass%20IP%20Restriction)
 
-Ô­ÏÈTr3jer´óÅ£ÊµÏÖµÄÊ±ºò£¬Ö»ÔÊĞíÓòÃûĞÎÊ½Îª ip.maindomain ĞÎÊ½£¬µ±È»Õâ¸öip¿ÉÒÔÊÇ10½øÖÆĞÎÊ½»òÕß16½øÖÆĞÎÊ½»òÕß×Ô¶¨Òå±àÂë£¨µ±È»Õâ¸ö×Ô¶¨Òå±àÂë±¾dns·şÎñÆ÷³ÌĞòÄÜÊ¶±ğµÄ£©
+åŸå…ˆTr3jerå¤§ç‰›å®ç°çš„æ—¶å€™ï¼Œåªå…è®¸åŸŸåå½¢å¼ä¸º ip.maindomain å½¢å¼ï¼Œå½“ç„¶è¿™ä¸ªipå¯ä»¥æ˜¯10è¿›åˆ¶å½¢å¼æˆ–è€…16è¿›åˆ¶å½¢å¼æˆ–è€…è‡ªå®šä¹‰ç¼–ç ï¼ˆå½“ç„¶è¿™ä¸ªè‡ªå®šä¹‰ç¼–ç æœ¬dnsæœåŠ¡å™¨ç¨‹åºèƒ½è¯†åˆ«çš„ï¼‰
 
-±ÈÈç 
+æ¯”å¦‚ 
 
 ping 123.123.123.123.example.com 
 
-µÚÒ»´Î·µ»Ø 123.123.123.123 
+ç¬¬ä¸€æ¬¡è¿”å› 123.123.123.123 
 
-ÔÙÔËĞĞÒ»´Îping 123.123.123.123.example.com ¾Í·µ»ØÄãÅäÖÃµÄrebindingµÄIPµØÖ·
+å†è¿è¡Œä¸€æ¬¡ping 123.123.123.123.example.com å°±è¿”å›ä½ é…ç½®çš„rebindingçš„IPåœ°å€
 
-Èç¹ûÄãping www.example.com ¾Í»á·µ»Ø´íÎó£¬ÎÒĞŞ¸ÄµÄ¾ÍÊÇÎÒ»á²¶»ñÕâ¸ö´íÎó£¬È»ºó·µ»ØÒ»´ÎÔ¤ÏÈÉèÖÃµÄip£¬±ÈÈç8.8.8.8
-
-
-2£©dns ¼ÇÂ¼µÄÎÛÈ¾
-
-ÎÒÃÇ¶¼ÖªµÀÕ¾³¤Ö®¼Ò¹¤¾ßÖĞÓĞÌá¹©¿ÉÒÔ²éÑ¯ÓòÃûµÄCNAME¼ÇÂ¼ºÍMX¼ÇÂ¼£¬ÆäÊµÔ­Àí¾ÍÊÇºóÌ¨²éÑ¯ ÓòÃûµÄCNAME¼ÇÂ¼»òÕßMX¼ÇÂ¼£¬È»ºó·µ»Ø¸øÇ°¶ËÒ³ÃæäÖÈ¾£¬µ«ÊÇºó¶ËÃ»ÓĞ¹ıÂËCNAMEµÄ·µ»ØÖµ£¬Ö±½Ó¶ª¸øÇ°¶Ë
-ÕâÑù¾Í»áµ¼ÖÂÀàËÆXSSµÄÖ®ÀàµÄ¹¥»÷
-
-Tr3jer ËùËµµÄ0day ¾ÍÊÇÕâ¸ö
+å¦‚æœä½ ping www.example.com å°±ä¼šè¿”å›é”™è¯¯ï¼Œæˆ‘ä¿®æ”¹çš„å°±æ˜¯æˆ‘ä¼šæ•è·è¿™ä¸ªé”™è¯¯ï¼Œç„¶åè¿”å›ä¸€æ¬¡é¢„å…ˆè®¾ç½®çš„ipï¼Œæ¯”å¦‚8.8.8.8
 
 
-3£©ÅúÁ¿½«ÓòÃûÇ°×º½øĞĞ¸÷ÖÖ±àÂë
+2ï¼‰dns è®°å½•çš„æ±¡æŸ“
+
+æˆ‘ä»¬éƒ½çŸ¥é“ç«™é•¿ä¹‹å®¶å·¥å…·ä¸­æœ‰æä¾›å¯ä»¥æŸ¥è¯¢åŸŸåçš„CNAMEè®°å½•å’ŒMXè®°å½•ï¼Œå…¶å®åŸç†å°±æ˜¯åå°æŸ¥è¯¢ åŸŸåçš„CNAMEè®°å½•æˆ–è€…MXè®°å½•ï¼Œç„¶åè¿”å›ç»™å‰ç«¯é¡µé¢æ¸²æŸ“ï¼Œä½†æ˜¯åç«¯æ²¡æœ‰è¿‡æ»¤CNAMEçš„è¿”å›å€¼ï¼Œç›´æ¥ä¸¢ç»™å‰ç«¯
+è¿™æ ·å°±ä¼šå¯¼è‡´ç±»ä¼¼XSSçš„ä¹‹ç±»çš„æ”»å‡»
+
+Tr3jer æ‰€è¯´çš„0day å°±æ˜¯è¿™ä¸ª
 
 
-    Ç°×ºÆäÊµ¾ÍÊÇIPµØÖ·£¬±¾dns³ÌĞò»á½ØÈ¡Õâ¸öÇ°×º£¬½âÂë³ÉIP£¬×÷Îªdns½âÎö½á¹û·µ»Ø¸ø¿Í»§¶Ë
+3ï¼‰æ‰¹é‡å°†åŸŸåå‰ç¼€è¿›è¡Œå„ç§ç¼–ç 
 
-    en ±àÂë£º
+
+    å‰ç¼€å…¶å®å°±æ˜¯IPåœ°å€ï¼Œæœ¬dnsç¨‹åºä¼šæˆªå–è¿™ä¸ªå‰ç¼€ï¼Œè§£ç æˆIPï¼Œä½œä¸ºdnsè§£æç»“æœè¿”å›ç»™å®¢æˆ·ç«¯
+
+    en ç¼–ç ï¼š
 	
     bjckbgikbkcei.nihao.com
     bjckbgikbkcej.nihao.com
@@ -56,7 +56,7 @@ Tr3jer ËùËµµÄ0day ¾ÍÊÇÕâ¸ö
     bjckbgikbkcfd.nihao.com
     bjckbgikbkcfe.nihao.com
 
-    int ±àÂë£º
+    int ç¼–ç ï¼š
 	
     3232236024.nihao.com
     3232236025.nihao.com
@@ -66,7 +66,7 @@ Tr3jer ËùËµµÄ0day ¾ÍÊÇÕâ¸ö
     3232236029.nihao.com
     3232236030.nihao.com
 
-    ²»±àÂë:
+    ä¸ç¼–ç :
 	
     192.168.1.240.nihao.com
     192.168.1.241.nihao.com
@@ -82,72 +82,72 @@ Tr3jer ËùËµµÄ0day ¾ÍÊÇÕâ¸ö
 	
 <br />
 
-#### 0x02. ²âÊÔÓë½ØÍ¼
+####. 0x02. æµ‹è¯•ä¸æˆªå›¾
 
-±¾³ÌĞòÖ§³Öpython2.x £¬Ôİ²»Ö§³Öpython3.x
+æœ¬ç¨‹åºæ”¯æŒpython2.x ï¼Œæš‚ä¸æ”¯æŒpython3.x
 
-±¾³ÌĞòÒÀÀµÁ½¸ö¶îÍâµÄ·Ç±ê×¼¿â
+æœ¬ç¨‹åºä¾èµ–ä¸¤ä¸ªé¢å¤–çš„éæ ‡å‡†åº“
 
 ipaddr
 
 dnslib
 
-ÔËĞĞ±¾³ÌĞòÇ°ĞèÒªÊÂÏÈ°²×°
+è¿è¡Œæœ¬ç¨‹åºå‰éœ€è¦äº‹å…ˆå®‰è£…
 
 
-ÎÒÃ»ÓĞ¹ºÂòÓòÃû£¬ÎÒÖ±½ÓÄ£ÄâÁËÒ»ÏÂ£¬²âÊÔ»·¾³ÈçÏÂ£º
+æˆ‘æ²¡æœ‰è´­ä¹°åŸŸåï¼Œæˆ‘ç›´æ¥æ¨¡æ‹Ÿäº†ä¸€ä¸‹ï¼Œæµ‹è¯•ç¯å¢ƒå¦‚ä¸‹ï¼š
 
-dns ·şÎñÆ÷£º 10.1.100.3 £¬kali2
+dns æœåŠ¡å™¨ï¼š 10.1.100.3 ï¼Œkali2
 
-dns ¿Í»§¶Ë£º  10.1.100.1£¬windows7 £¬ÅäÖÃdns ·şÎñÆ÷Ö¸Ïò10.1.100.3
+dns å®¢æˆ·ç«¯ï¼š  10.1.100.1ï¼Œwindows7 ï¼Œé…ç½®dns æœåŠ¡å™¨æŒ‡å‘10.1.100.3
 	
-1. dns rebinding²âÊÔ
+1. dns rebindingæµ‹è¯•
 	
-1£©Æô¶¯DNS ·şÎñÆ÷£º
+1ï¼‰å¯åŠ¨DNS æœåŠ¡å™¨ï¼š
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/start1.png "")	
 
-2£©¿Í»§¶Ë¿ªÊ¼ping £¨Ïàµ±ÓÚDNS²éÑ¯£©
+2ï¼‰å®¢æˆ·ç«¯å¼€å§‹ping ï¼ˆç›¸å½“äºDNSæŸ¥è¯¢ï¼‰
 
-µÚÒ»´Î²éÑ¯£¬·µ»Ø123.123.123.123
+ç¬¬ä¸€æ¬¡æŸ¥è¯¢ï¼Œè¿”å›123.123.123.123
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/first.png "")	
 
-µÚ¶ş´Î²éÑ¯£¬·µ»Ørebinding ÉèÖÃµÄip£¨µ±È»£¬Õâ¸öIPÒ»°ãÉèÖÃÎªÄÚ²¿IP£¬dns rebinding¼¼Êõ¾ÍÊÇÎªÁËÈÆ¹ıÄ³Ğ©ssrf ·À»¤µÄÏŞÖÆ£©
+ç¬¬äºŒæ¬¡æŸ¥è¯¢ï¼Œè¿”å›rebinding è®¾ç½®çš„ipï¼ˆå½“ç„¶ï¼Œè¿™ä¸ªIPä¸€èˆ¬è®¾ç½®ä¸ºå†…éƒ¨IPï¼Œdns rebindingæŠ€æœ¯å°±æ˜¯ä¸ºäº†ç»•è¿‡æŸäº›ssrf é˜²æŠ¤çš„é™åˆ¶ï¼‰
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/second.png "")	
 
-Ç°×ºÊÇwww£¬²»ÊÇipĞÎÊ½
+å‰ç¼€æ˜¯wwwï¼Œä¸æ˜¯ipå½¢å¼
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/3.png "")	
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/4.png "")	
 
-Ç°×ºÊÇ×Ô¶¨Òå±àÂë (-e ±íÊ¾×Ô¶¨Òå±àÂë£¬-e ¿ÉÒÔµ¥¶ÀÓÃ£¬µ«ºÍ-r Ò»ÆğÓÃ±È½Ï·ûºÏÊµ¼Ê³¡¾°)
+å‰ç¼€æ˜¯è‡ªå®šä¹‰ç¼–ç  (-e è¡¨ç¤ºè‡ªå®šä¹‰ç¼–ç ï¼Œ-e å¯ä»¥å•ç‹¬ç”¨ï¼Œä½†å’Œ-r ä¸€èµ·ç”¨æ¯”è¾ƒç¬¦åˆå®é™…åœºæ™¯)
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/rebind.png "")	
 
-µÚÒ»´Î²éÑ¯£º·µ»ØµÄÊÇ±àÂëÇ°×ºµÄ½âÂë½á¹û(bjckbgikbkcei ÊÇ192.168.1.248 ×Ô¶¨Òå±àÂëµÄºóÖµ£¬Õâ¸ö±àÂë·½Ê½Î»ÓÚlib/common.py ÖĞµÄnum_to_en_to_numº¯Êı)
+ç¬¬ä¸€æ¬¡æŸ¥è¯¢ï¼šè¿”å›çš„æ˜¯ç¼–ç å‰ç¼€çš„è§£ç ç»“æœ(bjckbgikbkcei æ˜¯192.168.1.248 è‡ªå®šä¹‰ç¼–ç çš„åå€¼ï¼Œè¿™ä¸ªç¼–ç æ–¹å¼ä½äºlib/common.py ä¸­çš„num_to_en_to_numå‡½æ•°)
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/5.png "")	
 
-µÚ¶ş´Î²éÑ¯£º·µ»ØµÄÊÇrenbindingÉèÖÃµÄIP
+ç¬¬äºŒæ¬¡æŸ¥è¯¢ï¼šè¿”å›çš„æ˜¯renbindingè®¾ç½®çš„IP
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/6.png "")	
 
 
-2. DNS ¼ÇÂ¼ÎÛÈ¾²âÊÔ
+2. DNS è®°å½•æ±¡æŸ“æµ‹è¯•
 
-Ö§³ÖCNAME ºÍMX ¼ÇÂ¼ÎÛÈ¾
+æ”¯æŒCNAME å’ŒMX è®°å½•æ±¡æŸ“
 
-1£©CNAME ¼ÇÂ¼ÎÛÈ¾
+1ï¼‰CNAME è®°å½•æ±¡æŸ“
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/7.png "")	
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/8.png "")	
 
 
-2£©MX ¼ÇÂ¼ÎÛÈ¾
+2ï¼‰MX è®°å½•æ±¡æŸ“
 
 ![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/9.png "")	
 
