@@ -183,7 +183,7 @@ def combination_hex_int_oct_ip(ip):
     return parsed_result
 
 if __name__ == '__main__':
-    ip = '10.1.100.1'
+    ip = '192.168.1.1'
     ip_int = struct.unpack('!L', socket.inet_aton(ip))[0]
     ip_oct_no_comma = oct(ip_int)
     ip_hex_no_comma = hex(ip_int)
