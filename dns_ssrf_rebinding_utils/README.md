@@ -4,6 +4,7 @@
 参考 Tr3jer 大牛(https://github.com/Tr3jer/dnsAutoRebinding) 的实现，做了一点修改，修复了一些小BUG，做了实际测试（type 和record_type混用问题，还有配置文件读写问题，详见代码，代码中都做了注释）
 
 <br />
+
 **0x00. 在正式环境使用这个工具的前提**
 
 1) 首先你需要一个DNS解析服务器（在这个DNS服务器上运行本程序）
