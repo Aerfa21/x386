@@ -101,5 +101,59 @@ dns 服务器： 10.1.100.3 ，kali2
 
 dns 客户端：  10.1.100.1，windows7 ，配置dns 服务器指向10.1.100.3
 	
+1. dns rebinding测试
 	
+1）启动DNS 服务器：
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/start1.png "")	
+
+2）客户端开始ping （相当于DNS查询）
+
+第一次查询，返回123.123.123.123
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/first.png "")	
+
+第二次查询，返回rebinding 设置的ip（当然，这个IP一般设置为内部IP，dns rebinding技术就是为了绕过某些ssrf 防护的限制）
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/second.png "")	
+
+前缀是www，不是ip形式
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/3.png "")	
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/4.png "")	
+
+前缀是自定义编码 (-e 表示自定义编码，-e 可以单独用，但和-r 一起用比较符合实际场景)
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/rebind.png "")	
+
+第一次查询：返回的是编码前缀的解码结果(bjckbgikbkcei 是192.168.1.248 自定义编码的后值，这个编码方式位于lib/common.py 中的num_to_en_to_num函数)
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/5.png "")	
+
+第二次查询：返回的是renbinding设置的IP
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/6.png "")	
+
+
+2. DNS 记录污染测试
+
+支持CNAME 和MX 记录污染
+
+1）CNAME 记录污染
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/7.png "")	
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/8.png "")	
+
+
+2）MX 记录污染
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/9.png "")	
+
+
+![alt ""](https://raw.githubusercontent.com/ForrestX386/static/master/pic/security_dev/10.png "")	
+
+
+
 
